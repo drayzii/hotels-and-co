@@ -2,8 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
 body {
   // make color tailwind white
   @apply bg-white;
   @apply text-gray;
+  font-family: 'Montserrat', sans-serif;
 }
