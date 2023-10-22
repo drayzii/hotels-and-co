@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  // make color tailwind white
+  @apply bg-white;
+  @apply text-gray;
+}
