@@ -1,11 +1,28 @@
-// import Image from 'next/image'
+import { dehydrate, QueryClient, useQuery } from 'react-query';
+
+import { getProperties } from '../lib/api';
+import Place from '../components/Cards/Place';
+
+export async function getStaticProps() {
+  const queryClient = new QueryClient()
+
+  await queryClient.prefetchQuery(['properties'], getProperties)
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  }
+}
 
 export default function Home() {
+  const { data } = useQuery({ queryKey: ['properties'], queryFn: getProperties })
+
   return (
-    <main className="flex min-h-screen flex-col">
-      <div className="flex items-center border-b-[1px] border-gray-light px-10 py-5">
-        <span className="text-3xl font-bold text-pink">Hotels&Co.</span>
-      </div>
-    </main>
+    <div className="flex flex-wrap m-auto gap-6 w-11/12 mt-4">
+      {data?.map((place) => (
+        <Place key={place.id} place={place} />
+      ))}
+    </div>
   )
 }
