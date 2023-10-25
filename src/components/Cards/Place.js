@@ -1,14 +1,16 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
-export default function Place({ place: { id, location, price, host, rating } }) {
+export default function Place({ place: { id, location, price, host, rating, image, propertyName } }) {
   return (
     <Link href="/properties/[id]" as={`/properties/${id}`}>
       <div className="flex-col w-[303px]">
-        <div className="h-[287px] bg-[url('https://loremflickr.com/640/480/abstract')] rounded-xl mb-4 relative">
+        <div className={`h-[287px] rounded-xl mb-4 relative overflow-hidden`}>
+          <Image src={image} alt={propertyName} fill style={{objectFit:"cover"}} />
           <FontAwesomeIcon icon={faHeart} className="absolute top-[20px] right-[20px] text-white w-[30px] h-[30px] cursor-pointer hover:fill-pink" />
         </div>
         <div className="flex justify-between">

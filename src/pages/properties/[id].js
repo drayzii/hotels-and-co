@@ -53,20 +53,20 @@ export default function Property() {
       </div>
       <div className='flex h-[500px] gap-3 mt-5 relative'>
         <div className='w-[49%] h-[100%] relative rounded-bl-xl rounded-tl-xl overflow-hidden'>
-          <Image src={image} alt={propertyName} layout='fill' objectFit='cover' />
+          <Image src={image} alt={propertyName} fill style={{objectFit:"cover"}} />
         </div>
         <div className='w-1/2 flex flex-wrap gap-3'>
           <div className='w-[49%] h-[49%] relative'>
-            <Image src={image} alt={propertyName} layout='fill' objectFit='cover' />
+            <Image src={image + '?i=1'} alt={propertyName} fill style={{objectFit:"cover"}} />
           </div>
           <div className='w-[49%] h-[49%] relative rounded-tr-xl overflow-hidden'>
-            <Image src={image} alt={propertyName} layout='fill' objectFit='cover' />
+            <Image src={image + '?i=2'} alt={propertyName} fill style={{objectFit:"cover"}} />
           </div>
           <div className='w-[49%] h-[49%] relative'>
-            <Image src={image} alt={propertyName} layout='fill' objectFit='cover' />
+            <Image src={image + '?i=3'} alt={propertyName} fill style={{objectFit:"cover"}} />
           </div>
           <div className='w-[49%] h-[49%] relative rounded-br-xl overflow-hidden'>
-            <Image src={image} alt={propertyName} layout='fill' objectFit='cover' />
+            <Image src={image + '?i=4'} alt={propertyName} fill style={{objectFit:"cover"}} />
           </div>
         </div>
         <div className='absolute bottom-3 right-3'>
@@ -81,7 +81,7 @@ export default function Property() {
           <div className='flex justify-between items-center'>
             <div className='text-neutral-800 text-xl font-bold'>Entire house hosted by {host}</div>
             <div className='w-[50px] h-[50px] rounded-full overflow-hidden relative'>
-              <Image src={hostAvatar} alt={host} layout='fill' objectFit='cover' />
+              <Image src={hostAvatar} alt={host} fill style={{objectFit:"cover"}} />
             </div>
           </div>
           <div className='flex items-center gap-2 mt-10'>
@@ -128,7 +128,7 @@ export default function Property() {
             <div className='flex flex-col py-10 px-52 bg-gray-light rounded-2xl'>
               <div className='flex justify-between gap-10 bg-white rounded-2xl p-10'>
                 <div className='w-[150px] h-[150px] rounded-full overflow-hidden relative'>
-                  <Image src={hostAvatar} alt={host} layout='fill' objectFit='cover' />
+                  <Image src={hostAvatar} alt={host} fill style={{objectFit:"cover"}} />
                 </div>
                 <div className='flex flex-col'>
                   <div className='flex flex-col'>

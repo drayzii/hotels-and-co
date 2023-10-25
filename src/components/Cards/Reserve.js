@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
-import Button from '../../components/Button';
+import Button from '@/components/Button';
 
 export default function Reserve({ price, rating, reviewsCount }) {
   return (
