@@ -4,12 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
-export default function Place({ place: { id, location, price, host } }) {
+export default function Place({ place: { id, location, price, host, rating } }) {
   return (
-    <Link href="/property/[id]" as={`/property/${id}`}>
+    <Link href="/properties/[id]" as={`/properties/${id}`}>
       <div className="flex-col w-[303px]">
         <div className="h-[287px] bg-[url('https://loremflickr.com/640/480/abstract')] rounded-xl mb-4 relative">
-          <FontAwesomeIcon icon={faHeart} className="absolute top-[20px] right-[20px] text-white w-[30px] h-[30px] cursor-pointer hover:bg-pink" />
+          <FontAwesomeIcon icon={faHeart} className="absolute top-[20px] right-[20px] text-white w-[30px] h-[30px] cursor-pointer hover:fill-pink" />
         </div>
         <div className="flex justify-between">
           <div className="flex-col justify-start items-start gap-2 inline-flex">
@@ -30,9 +30,7 @@ export default function Place({ place: { id, location, price, host } }) {
               <FontAwesomeIcon icon={faStar} className="text-black" />
             </div>
             <div className="text-neutral-800 text-sm">
-              {
-                (Math.random() * 5).toFixed(2)
-              }
+              {(Number(rating)/2.1).toFixed(2)}
             </div>
           </div>
         </div>

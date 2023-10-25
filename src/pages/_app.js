@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Link from 'next/link';
 import {
   Hydrate,
   QueryClient,
@@ -11,6 +10,8 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import '../styles/globals.scss';
 
+import Header from '../components/Header';
+
 config.autoAddCss = false;
 
 export default function MyApp({ Component, pageProps }) {
@@ -20,11 +21,7 @@ export default function MyApp({ Component, pageProps }) {
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
         <main className="flex min-h-screen flex-col">
-          <div className="flex items-center border-b-[1px] border-gray-light px-10 py-5">
-            <Link href='/'>
-              <span className="text-3xl font-bold text-pink">Hotels&Co.</span>
-            </Link>
-          </div>
+          <Header />
           <Component {...pageProps} />
         </main>
       </Hydrate>
